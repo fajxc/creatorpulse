@@ -30,8 +30,8 @@ export default function Home() {
               <a href="#" className="text-sm font-semibold leading-6 text-gray-200 hover:text-white transition-colors">Blog</a>
             </div>
             <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-              <a href="#" className="text-sm font-semibold leading-6 text-gray-200 hover:text-white transition-colors">
-                Sign up <span aria-hidden="true">→</span>
+              <a href="/login" className="text-sm font-semibold leading-6 text-gray-200 hover:text-white transition-colors">
+                Dashboard <span aria-hidden="true">→</span>
               </a>
             </div>
           </nav>
@@ -101,14 +101,14 @@ export default function Home() {
                 Scale Your Brand with AI-Powered Creator Scanning
               </h1>
               <p className="mt-6 text-lg leading-8 text-gray-200">
-                Connect with high-performing content creators without ads, brokers, or agencies. Our AI will find you dozens of creators for your brand's next viral campaign.
+                Connect with high-performing content creators without ads, brokers, or agencies. Let us do your dirty work.
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 <a href="#" className="rounded-md bg-white px-4 py-2.5 text-sm font-semibold text-[#240b36] hover:bg-gray-100 transition-colors">
                   Get started
                 </a>
                 <a href="#" className="text-sm font-semibold leading-6 text-gray-200 hover:text-white transition-colors">
-                  Learn more <span aria-hidden="true">→</span>
+                  <span aria-hidden="true"></span>
                 </a>
               </div>
             </div>
