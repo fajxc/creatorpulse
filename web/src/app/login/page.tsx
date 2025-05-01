@@ -1,9 +1,15 @@
 import Link from "next/link"
 import { Zap } from "lucide-react"
+import { ArrowLeft } from "lucide-react"
 
 export default function LoginPage() {
   return (
     <div className="min-h-screen bg-gradient-to-r from-[#8a0d23] to-[#14061e] flex flex-col items-center justify-center p-4">
+      <div className="w-full max-w-md mb-4">
+        <Link href="/" className="inline-flex items-center gap-2 text-white/80 hover:text-white text-sm font-medium transition-colors">
+          <ArrowLeft className="h-4 w-4" /> Home
+        </Link>
+      </div>
       <div className="w-full max-w-md">
         <div className="flex items-center justify-center mb-8">
           <div className="h-10 w-10 rounded-md bg-[#c31432] flex items-center justify-center mr-3">
