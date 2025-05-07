@@ -121,12 +121,25 @@ export default function ClientPortal() {
     : creators;
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-[#8a0d23] to-[#14061e] text-white">
+    <div className="min-h-screen bg-gradient-to-r from-[#0a0a0a] via-[#1a1a1a] to-[#0a0a0a] text-white">
+      {/* Navigation */}
+      <header className="container mx-auto px-4 py-6 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <Zap className="h-8 w-8 text-[#ff4d8d] drop-shadow-[0_0_20px_rgba(255,77,141,0.7)]" />
+          <span className="font-semibold">Creator Pulse</span>
+        </div>
+        <div className="flex items-center gap-4">
+          <button className="text-sm font-medium text-white/90 hover:text-white transition-colors">
+            Logout
+          </button>
+        </div>
+      </header>
+
       <div className="flex">
         {/* Sidebar */}
-        <div className="fixed left-0 top-0 h-full w-[180px] bg-black border-r border-gray-800 py-6 px-3">
+        <div className="fixed left-0 top-0 h-full w-[180px] bg-black/20 border-r border-white/10 py-6 px-3">
           <div className="flex items-center gap-2 px-3 mb-8">
-            <div className="h-7 w-7 rounded-md bg-[#c31432] flex items-center justify-center">
+            <div className="h-7 w-7 rounded-md bg-[#ff4d8d] flex items-center justify-center shadow-[0_0_20px_rgba(255,77,141,0.7)]">
               <Zap className="h-4 w-4 text-white" />
             </div>
             <h1 className="text-lg font-semibold">Client Portal</h1>
@@ -135,28 +148,28 @@ export default function ClientPortal() {
           <nav className="space-y-1">
             <Link
               href="#"
-              className="flex items-center gap-2 px-3 py-2 text-gray-400 hover:bg-gray-900 hover:text-white rounded-md transition-colors"
+              className="flex items-center gap-2 px-3 py-2 text-white/70 hover:bg-[#ff4d8d]/10 hover:text-white rounded-md transition-colors"
             >
               <Users className="h-4 w-4" />
               <span className="text-sm">Dashboard</span>
             </Link>
             <Link
               href="#"
-              className="flex items-center gap-2 px-3 py-2 bg-gray-900 text-white rounded-md transition-colors"
+              className="flex items-center gap-2 px-3 py-2 bg-[#ff4d8d]/10 text-white rounded-md transition-colors"
             >
               <Users className="h-4 w-4" />
               <span className="text-sm">Creators</span>
             </Link>
             <Link
               href="#"
-              className="flex items-center gap-2 px-3 py-2 text-gray-400 hover:bg-gray-900 hover:text-white rounded-md transition-colors"
+              className="flex items-center gap-2 px-3 py-2 text-white/70 hover:bg-[#ff4d8d]/10 hover:text-white rounded-md transition-colors"
             >
               <MessageSquare className="h-4 w-4" />
               <span className="text-sm">Messages</span>
             </Link>
             <Link
               href="#"
-              className="flex items-center gap-2 px-3 py-2 text-gray-400 hover:bg-gray-900 hover:text-white rounded-md transition-colors"
+              className="flex items-center gap-2 px-3 py-2 text-white/70 hover:bg-[#ff4d8d]/10 hover:text-white rounded-md transition-colors"
             >
               <CreditCard className="h-4 w-4" />
               <span className="text-sm">Billing</span>
@@ -169,50 +182,50 @@ export default function ClientPortal() {
           <header className="flex items-center justify-between mb-8">
             <h1 className="text-2xl font-bold">Creator Discovery</h1>
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-white/70" />
               <input
                 type="text"
                 placeholder="Search creators..."
-                className="pl-10 pr-4 py-2 bg-black/30 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#c31432] focus:border-transparent w-[300px]"
+                className="pl-10 pr-4 py-2 bg-black/30 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#ff4d8d] focus:border-transparent w-[300px]"
               />
             </div>
           </header>
 
           <main>
-            <div className="bg-black rounded-xl border border-gray-800 shadow-xl overflow-hidden">
-              <div className="p-6 border-b border-gray-800">
+            <div className="bg-black/20 rounded-xl border border-white/10 shadow-xl overflow-hidden">
+              <div className="p-6 border-b border-white/10">
                 <div className="flex items-center justify-between mb-4">
                   <h2 className="text-xl font-semibold">Creator Matches</h2>
-                  <button className="flex items-center gap-2 px-4 py-2 bg-[#c31432] hover:bg-[#a01029] rounded-md text-sm font-medium transition-colors">
+                  <button className="flex items-center gap-2 px-4 py-2 bg-[#ff4d8d] hover:bg-[#ff1a6c] rounded-md text-sm font-medium transition-colors">
                     <Filter className="h-4 w-4" />
                     Advanced Filters
                   </button>
                 </div>
-                <p className="text-gray-400">Search creators by niche, follower range, and engagement metrics</p>
+                <p className="text-white/70">Search creators by niche, follower range, and engagement metrics</p>
               </div>
 
-              <div className="flex items-center gap-2 p-4 bg-[#14061e]/50 border-b border-gray-800">
+              <div className="flex items-center gap-2 p-4 bg-black/30 border-b border-white/10">
                 <button 
                   onClick={() => setSelectedPlatform(null)}
-                  className={`px-4 py-2 ${!selectedPlatform ? 'bg-[#2d0a14]' : 'hover:bg-[#3d0f1c]'} rounded-md text-sm font-medium transition-colors`}
+                  className={`px-4 py-2 ${!selectedPlatform ? 'bg-[#ff4d8d]/10' : 'hover:bg-[#ff4d8d]/10'} rounded-md text-sm font-medium transition-colors`}
                 >
                   All Creators
                 </button>
                 <div className="relative group" ref={platformRef}>
                   <button 
                     onClick={() => setShowPlatformDropdown(!showPlatformDropdown)}
-                    className={`flex items-center gap-1 px-4 py-2 rounded-md text-sm font-medium text-gray-300 transition-colors ${(showPlatformDropdown || selectedPlatform ? 'bg-[#2d0a14]' : 'group-hover:bg-[#2d0a14]')}`}
+                    className={`flex items-center gap-1 px-4 py-2 rounded-md text-sm font-medium text-white/70 transition-colors ${(showPlatformDropdown || selectedPlatform ? 'bg-[#ff4d8d]/10' : 'group-hover:bg-[#ff4d8d]/10')}`}
                   >
                     {selectedPlatform || 'Platform'}
                     <ChevronDown className="h-4 w-4" />
                   </button>
-                  <div className={`absolute w-32 mt-1 bg-[#1d0910] border border-gray-800 rounded-md shadow-lg z-10 transition-all duration-75 ${showPlatformDropdown ? 'visible' : 'invisible group-hover:visible'}`}>
+                  <div className={`absolute w-32 mt-1 bg-black/20 border border-white/10 rounded-md shadow-lg z-10 transition-all duration-75 ${showPlatformDropdown ? 'visible' : 'invisible group-hover:visible'}`}>
                     <button 
                       onClick={() => {
                         setSelectedPlatform('Reddit')
                         setShowPlatformDropdown(false)
                       }}
-                      className="w-full px-4 py-2 text-left text-sm text-gray-300 hover:bg-[#2d0a14]"
+                      className="w-full px-4 py-2 text-left text-sm text-white/70 hover:bg-[#ff4d8d]/10"
                     >
                       Reddit
                     </button>
@@ -221,7 +234,7 @@ export default function ClientPortal() {
                         setSelectedPlatform('Other')
                         setShowPlatformDropdown(false)
                       }}
-                      className="w-full px-4 py-2 text-left text-sm text-gray-300 hover:bg-[#2d0a14]"
+                      className="w-full px-4 py-2 text-left text-sm text-white/70 hover:bg-[#ff4d8d]/10"
                     >
                       Other
                     </button>
@@ -230,14 +243,14 @@ export default function ClientPortal() {
                 <div className="relative group" ref={contactedRef}>
                   <button 
                     onClick={() => setShowContactedDropdown(!showContactedDropdown)}
-                    className={`flex items-center gap-1 px-4 py-2 rounded-md text-sm font-medium text-gray-300 transition-colors ${(showContactedDropdown ? 'bg-[#2d0a14]' : 'group-hover:bg-[#2d0a14]')}`}
+                    className={`flex items-center gap-1 px-4 py-2 rounded-md text-sm font-medium text-white/70 transition-colors ${(showContactedDropdown ? 'bg-[#ff4d8d]/10' : 'group-hover:bg-[#ff4d8d]/10')}`}
                   >
                     Contacted?
                     <ChevronDown className="h-4 w-4" />
                   </button>
-                  <div className={`absolute w-32 mt-1 bg-[#1d0910] border border-gray-800 rounded-md shadow-lg z-10 transition-all duration-75 ${showContactedDropdown ? 'visible' : 'invisible group-hover:visible'}`}>
-                    <button className="w-full px-4 py-2 text-left text-sm text-gray-300 hover:bg-[#2d0a14]">Yes</button>
-                    <button className="w-full px-4 py-2 text-left text-sm text-gray-300 hover:bg-[#2d0a14]">No</button>
+                  <div className={`absolute w-32 mt-1 bg-black/20 border border-white/10 rounded-md shadow-lg z-10 transition-all duration-75 ${showContactedDropdown ? 'visible' : 'invisible group-hover:visible'}`}>
+                    <button className="w-full px-4 py-2 text-left text-sm text-white/70 hover:bg-[#ff4d8d]/10">Yes</button>
+                    <button className="w-full px-4 py-2 text-left text-sm text-white/70 hover:bg-[#ff4d8d]/10">No</button>
                   </div>
                 </div>
               </div>
@@ -247,19 +260,19 @@ export default function ClientPortal() {
                   {filteredCreators.map((creator, index) => (
                     <div
                       key={index}
-                      className="bg-[#1d0910] rounded-lg border border-gray-800 overflow-hidden hover:border-[#c31432]/50 transition-all duration-200"
+                      className="bg-black/20 rounded-lg border border-white/10 overflow-hidden hover:border-[#ff4d8d]/50 transition-all duration-200"
                     >
-                      <div className="h-24 bg-gradient-to-r from-[#8a0d23]/20 to-[#4a0d2a]/20"></div>
+                      <div className="h-24 bg-gradient-to-r from-[#ff4d8d]/10 to-[#ff1a6c]/10"></div>
                       <div className="p-5 pt-0">
                         <div className="flex items-center -mt-8 mb-3">
-                          <div className="h-16 w-16 rounded-full bg-[#2d0a14] border-4 border-[#1d0910] flex items-center justify-center text-xl font-bold">
+                          <div className="h-16 w-16 rounded-full bg-[#ff4d8d]/10 border-4 border-black/20 flex items-center justify-center text-xl font-bold">
                             {creator.username.charAt(0).toUpperCase()}
                           </div>
                         </div>
                         <h3 className="text-lg font-semibold mb-1">{creator.username}</h3>
-                        <p className="text-sm text-gray-400 mb-4 line-clamp-2">{creator.description}</p>
+                        <p className="text-sm text-white/70 mb-4 line-clamp-2">{creator.description}</p>
 
-                        <div className="flex justify-between mb-4 text-xs text-gray-400">
+                        <div className="flex justify-between mb-4 text-xs text-white/70">
                           <div>
                             <div className="font-semibold text-white">{creator.followers}</div>
                             <div>Followers</div>
@@ -271,11 +284,11 @@ export default function ClientPortal() {
                         </div>
 
                         <div className="flex items-center justify-between">
-                          <button className="flex items-center gap-1 text-[#e04c6c] hover:text-[#f06c8c] text-sm font-medium">
+                          <button className="flex items-center gap-1 text-[#ff4d8d] hover:text-[#ff1a6c] text-sm font-medium">
                             View Profile
                             <ChevronRight className="h-4 w-4" />
                           </button>
-                          <button className="px-3 py-1 bg-[#c31432]/20 hover:bg-[#c31432]/30 text-[#e04c6c] rounded-md text-sm font-medium transition-colors">
+                          <button className="px-3 py-1 bg-[#ff4d8d]/10 hover:bg-[#ff4d8d]/20 text-[#ff4d8d] rounded-md text-sm font-medium transition-colors">
                             Contact
                           </button>
                         </div>
